@@ -1,62 +1,76 @@
-\# SENG 473 Information Security Final Project
+\# DevSecOps Final Project
+
+
+
+This project was created for the SENG 473 Information Security final project.
 
 
 
 \## Topic
 
+
+
 Automated DevSecOps Pipeline
 
 
 
-\## Project Goal
+\## Description
 
-The goal of this project is to create an automated security gate for a software project. The pipeline scans code before deployment and blocks insecure updates.
+
+
+This project demonstrates a security gate pipeline using GitHub Actions. The pipeline automatically scans the project whenever code is pushed to GitHub.
+
+
+
+The purpose of the pipeline is to detect security issues before unsafe code is accepted.
 
 
 
 \## Tools Used
 
-\- GitHub Actions: Runs the automated security pipeline.
-
-\- Gitleaks: Detects hardcoded secrets such as API keys and passwords.
-
-\- npm audit: Scans Node.js dependencies for known vulnerabilities.
 
 
+\- Node.js
 
-\## Project Description
+\- npm
 
-This project contains a small Node.js web application. I intentionally added insecure code and vulnerable dependencies to demonstrate how a DevSecOps pipeline detects security problems.
+\- GitHub
 
+\- GitHub Actions
 
+\- Gitleaks
 
-The pipeline performs two checks:
-
-1\. Secret scanning
-
-2\. Dependency vulnerability scanning
+\- npm audit
 
 
 
-If a security problem is found, the pipeline fails. This means unsafe code is blocked before deployment.
+\## Project Files
 
 
 
-\## Demonstration
+\- `index.js` - Simple Node.js application.
 
-First, I push the insecure version of the project. The pipeline runs automatically and fails because the project contains a hardcoded secret and vulnerable dependencies.
+\- `insecure.js` - Demonstrates credential handling using environment variables.
+
+\- `package.json` - Contains project details and dependencies.
+
+\- `package-lock.json` - Stores exact dependency versions.
+
+\- `.github/workflows/security.yml` - GitHub Actions security pipeline.
+
+\- `REPORT.md` - Full final project report.
 
 
 
-Then, I fix the project by removing the hardcoded secret and updating the vulnerable dependencies.
+\## How to Run the Application
 
 
 
-After pushing the fixed version, the pipeline passes successfully.
+Install dependencies:
 
 
 
-\## Conclusion
+```bash
 
-This project demonstrates how DevSecOps integrates security into the software development lifecycle by automatically detecting insecure changes before deployment.
+npm install
 
