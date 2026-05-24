@@ -1,10 +1,10 @@
-const API_KEY = "DEMO_API_KEY_FOR_CLASS_ONLY";
+const API_KEY = process.env.API_KEY;
 
 function login(username, password) {
-  if (username === "admin" && password === "admin123") {
-    return true;
-  }
-  return false;
+  const storedUsername = process.env.ADMIN_USERNAME;
+  const storedPassword = process.env.ADMIN_PASSWORD;
+
+  return username === storedUsername && password === storedPassword;
 }
 
 module.exports = { login };
